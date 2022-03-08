@@ -1,3 +1,5 @@
+package test01;
+
 import java.util.Scanner;
 
 //회문 문자열
@@ -6,15 +8,14 @@ public class Exam11 {
         String answer = "";
         str = str.toUpperCase();
         str = str + " ";
-        System.out.println(str);
         int cnt = 1;
         for (int i = 0; i < str.length()-1; i++) {
             if (str.charAt(i) == str.charAt(i+1)) {
-                cnt ++;
+                cnt++;
             } else {
-                answer+=str.charAt(i);
+                answer += str.charAt(i);
                 if (cnt > 1) {
-                    answer+=String.valueOf(cnt);
+                    answer += String.valueOf(cnt);
                 }
                 cnt = 1;
             }
@@ -41,11 +42,12 @@ public class Exam11 {
         return answer;
     }
 
+
+
     public static void main(String[] args) {
         Exam11 exam07 = new Exam11();
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
-
         System.out.println(exam07.solution(str));
     }
 }

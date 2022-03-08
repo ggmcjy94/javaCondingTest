@@ -1,3 +1,5 @@
+package test01;
+
 import java.util.Scanner;
 
 //https://cote.inflearn.com/contest/10/problems

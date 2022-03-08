@@ -1,7 +1,7 @@
+package test01;
+
 import java.util.Scanner;
 
-//대문자 65 ~ 90
-// 소문자 97 ~ 122
 public class Exam03 {
     public String solution(String str) {
         String answer = "";

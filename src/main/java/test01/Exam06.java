@@ -1,3 +1,5 @@
+package test01;
+
 import java.util.Scanner;
 
 //            System.out.println(str.charAt(i)+ " " + i + " "+ " " + str.indexOf(str.charAt(i)));

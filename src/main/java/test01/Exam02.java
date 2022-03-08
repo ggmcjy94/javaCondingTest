@@ -1,4 +1,5 @@
-import java.util.Arrays;
+package test01;
+
 import java.util.Scanner;
 
 //대문자 65 ~ 90
