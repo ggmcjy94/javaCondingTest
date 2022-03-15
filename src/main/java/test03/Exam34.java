@@ -5,8 +5,15 @@ import java.util.Scanner;
 public class Exam34 {
 
     public int solution(int n, int k, int[] a) {
-        int answer = 0;
-
+        int answer = 0, sum=0, lt=0;
+        for (int rt = 0;  rt < n; rt++) {
+            sum += a[rt];
+            if (sum == k) answer++;
+            while(sum >= k) {
+                sum -= a[lt++];
+                if (sum == k) answer++;
+            }
+        }
         return answer;
     }
 
