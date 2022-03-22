@@ -25,6 +25,25 @@ public class Exam43 {
         return answer;
     }
 
+    public ArrayList<Integer> solution2(int n, int k, int[] arr) {
+        ArrayList<Integer> answer = new ArrayList<>();
+        HashMap<Integer , Integer> map = new HashMap<>();
+        for (int i = 0; i < k-1; i++) { // 3개담기
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+        }
+        int lt = 0;
+        for (int rt = k-1; rt < n; rt++) {
+            map.put(arr[rt] , map.getOrDefault(arr[rt], 0) + 1);//1개 담기
+            answer.add(map.size());
+            map.put(arr[lt] , map.get(arr[lt]) -1 );
+            if (map.get(arr[lt]) == 0) {
+                map.remove(arr[lt]);
+            }
+            lt++;
+        }
+        return answer;
+    }
+
     public static void main(String[] args) {
         Exam43 exam21 = new Exam43();
         Scanner sc = new Scanner(System.in);
