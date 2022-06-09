@@ -7,9 +7,7 @@ public class BubbleSort {
 
     public int[] solution(int n, int[] arr) {
         for (int i = 0; i <n-1; i++) {
-            System.out.println("i : "+i);
             for (int j = 0; j<n-i-1; j++) {
-                System.out.println("j : " + j);
                 if (arr[j] > arr[j+1]) {
                     int tmp = arr[j];
                     arr[j] = arr[j+1];
@@ -31,5 +29,18 @@ public class BubbleSort {
         for (int i : b.solution(n, arr)) {
             System.out.print(i + " ");
         }
+    }
+
+    public int[] solution2(int n, int[] arr) {
+        for (int i = 0; i < n-1; i++) {
+            for (int j = 0; j < n-i-1; j++) {
+                if (arr[j] > arr[j+1]) { // 여기서 4 > 5 이렇게 됌
+                    int tmp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = tmp;
+                }
+            }
+        }
+        return arr;
     }
 }
