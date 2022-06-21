@@ -3,7 +3,7 @@ package test8;
 import java.util.Scanner;
 
 /**
- * 합이 같은 부분집합(DFS)
+ * 합이 같은 부분집합(DFS) 부분집합
  */
 public class AmaZoneInterview {
     static String answer = "NO";
