@@ -18,13 +18,25 @@ public class Test {
 
     public static void main(String[] args) {
         Test t = new Test();
-        System.out.println(t.romanToInt("MCMXCIV"));
+        String s[] = {"flower", "flow", "flight"};
+        System.out.println(t.longestCommonPrefix(s));
+    }
+
+    public String longestCommonPrefix(String[] strs) {
+        if (strs.length == 0) return "";
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++)
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
+            }
+        return prefix;
     }
 
 
     public int romanToInt(String s) {
         int output = 0;
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        HashMap<Character, Integer> map = new HashMap<>();
         map.put('I', 1);
         map.put('V', 5);
         map.put('X', 10);
