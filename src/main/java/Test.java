@@ -1,4 +1,6 @@
+import java.util.EmptyStackException;
 import java.util.HashMap;
+import java.util.Stack;
 
 public class Test {
 
@@ -52,5 +54,26 @@ public class Test {
                 output -= map.get(s.charAt(i));
         }
         return output;
+    }
+
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            char item;
+            if (c == '(' || c=='{' || c=='[') {
+                stack.push(c);
+            } else {
+                try {
+                    item = stack.pop();
+                } catch (Exception e) {
+                    return false;
+                }
+                if ((c == ')' && item != '(') || (c == '}' && item != '{') || (c == ']' && item != '[')) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
     }
 }
