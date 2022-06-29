@@ -3,7 +3,7 @@ package test8;
 import java.util.Scanner;
 
 /**
- * 미로탐색 (DFS)
+ * 미로탐색 (dfs_bfs)
  */
 public class 미로탐색 {
 

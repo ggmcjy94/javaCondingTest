@@ -1,7 +1,7 @@
 package test07;
 
 /**
- * 이진트리 순회(깊이 우선탐색 DFS : Depth-First Search)
+ * 이진트리 순회(깊이 우선탐색 dfs_bfs : Depth-First Search)
  */
 
 class Node {

@@ -3,7 +3,7 @@ package test8;
 import java.util.Scanner;
 
 /**
- * 섬나라 아일랜드 (DFS)
+ * 섬나라 아일랜드 (dfs_bfs)
  */
 public class 섬나라아일랜드 {
     static int[] dx = {-1,-1,0,1,1,1,0,-1};

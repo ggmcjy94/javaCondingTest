@@ -3,7 +3,7 @@ package test8;
 import java.util.Scanner;
 
 /**
- * 바둑이 승차 (DFS) 부분집합
+ * 바둑이 승차 (dfs_bfs) 부분집합
  */
 public class BaDooGi {
     static int answer = Integer.MIN_VALUE, c, n;

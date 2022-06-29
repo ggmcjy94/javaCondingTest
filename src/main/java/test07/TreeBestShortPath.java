@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Tree 말단 노드까지의 가장 짧은 경로(DFS or BFS)
+ * Tree 말단 노드까지의 가장 짧은 경로(dfs_bfs or BFS)
  */
 
 class Node2 {
@@ -18,7 +18,7 @@ class Node2 {
 }
 public class TreeBestShortPath {
     Node2 root;
-    public int DFS(int L, Node2 root) { //DFS 는 자식이 있으려면 완전히 2개가 있어야된다.
+    public int DFS(int L, Node2 root) { //dfs_bfs 는 자식이 있으려면 완전히 2개가 있어야된다.
         if (root.lt == null && root.rt == null) return L;
         else return Math.min(DFS(L+1, root.lt), DFS(L+1, root.rt));
     }

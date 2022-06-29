@@ -36,7 +36,7 @@ public class Recursive04 {
         for (int i = 1; i <= n; i++) System.out.print(fibo[i] + " ");
 
 //        for (int i = 1; i <= n; i++) {
-//            System.out.print(recursive01.DFS(i) + " ");
+//            System.out.print(recursive01.dfs_bfs(i) + " ");
 //        }
     }
 

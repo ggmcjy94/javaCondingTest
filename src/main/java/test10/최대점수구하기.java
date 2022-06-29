@@ -3,7 +3,7 @@ package test10;
 import java.util.Scanner;
 
 /**
- * DFS 로 풀수 있으나 이것도 n 제한이 커지면 다이나믹으로 풀어야 된다,
+ * dfs_bfs 로 풀수 있으나 이것도 n 제한이 커지면 다이나믹으로 풀어야 된다,
  * 냅색 알고리즘
  */
 public class 최대점수구하기 {

@@ -3,7 +3,7 @@ package test8;
 import java.util.Scanner;
 
 /**
- * 최대점수 구하기(DFS) 부분집합
+ * 최대점수 구하기(dfs_bfs) 부분집합
  */
 public class MaxScore {
 

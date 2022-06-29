@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * DFS 강의 한번더
+ * dfs_bfs 강의 한번더
  */
 
 //class Point {
