@@ -26,9 +26,11 @@ public class _70_ClimbingStairs {
     }
 
     public int climbStairs2(int n) {
-        if (n == 1) return 1;
-        else if (n == 2) return 1;
-        else return climbStairs2(n - 2) + climbStairs2(n - 1);
+        int[] fibo = new int[n+1];
+        if (fibo[n] > 0) return fibo[n];
+        if (n == 1) return fibo[1] = 1;
+        else if (n == 2) return fibo[2] = 1;
+        else return fibo[n] = climbStairs2(n - 2) + climbStairs2(n - 1);
     }
 
 
