@@ -30,6 +30,7 @@ public class k번쨰 {
         int[] answer;
         answer = new int[commands.length];
         for (int i = 0; i < commands.length; i++) {
+            System.out.println();
             ArrayList<Integer> list = new ArrayList<>();
             for (int j = commands[i][0]-1; j < commands[i][1]; j ++) {
                 list.add(array[j]);
