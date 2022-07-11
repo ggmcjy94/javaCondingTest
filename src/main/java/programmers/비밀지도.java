@@ -27,7 +27,7 @@ public class 비밀지도 {
 
     public static void main(String[] args) {
         비밀지도 T = new 비밀지도();
-        for (String s : T.solution(5, new int[]{46, 33, 33 ,22, 31, 50}, new int[]{27 ,56, 19, 14, 14, 10})) {
+        for (String s : T.solution2(5, new int[]{46, 33, 33 ,22, 31, 50}, new int[]{27 ,56, 19, 14, 14, 10})) {
             System.out.println(s);
         }
     }
