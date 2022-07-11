@@ -6,6 +6,7 @@ public class 비밀지도 {
         String[] answer = {};
         for (int i : arr1) {
             System.out.println(String.format("%05d", Integer.parseInt(Integer.toBinaryString(i))));
+            System.out.println();
         }
         return answer;
     }
