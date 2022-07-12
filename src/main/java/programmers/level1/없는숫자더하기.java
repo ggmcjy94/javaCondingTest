@@ -1,8 +1,7 @@
-package programmers;
+package programmers.level1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class 없는숫자더하기 {
 
