@@ -1,8 +1,7 @@
 package fastcampus.chapter1;
 
 import java.sql.Time;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 class NodeMgmtTest{
 
@@ -70,26 +69,30 @@ class NodeMgmtTest{
 public class 트리Test {
 
     public static void main(String[] args) {
-        int target = 59342;
+        int target = 59;
         List<Integer> list = new ArrayList<>();
         NodeMgmtTest nodeMgmtTest = new NodeMgmtTest();
-        for (int i = 1; i <= 1000000; i++) {
-            list.add(i);
-            nodeMgmtTest.insertNode(i);
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < i; j++) {
+                if (list.get(i) == list.get(j)) {
+                    i--;
+                }
+            }
         }
+//        for (Integer i : list) {
+//            nodeMgmtTest.insertNode(i);
+//        }
+//
+        Collections.sort(list);
         long startTime = System.currentTimeMillis();
-        System.out.println(nodeMgmtTest.search(target).value + "찾았다");
         forSearch(target, list);
         long endTime = System.currentTimeMillis();
         System.out.println(endTime - startTime);
 
-        long startTime2 = System.currentTimeMillis();
-        System.out.println(nodeMgmtTest.search(target).value + "찾았다");
-        bstMethod(target, nodeMgmtTest);
-        long endTime2 = System.currentTimeMillis();
-        System.out.println(endTime2 - startTime2);
-
-
+//        long startTime2 = System.currentTimeMillis();
+//        bstMethod(target, nodeMgmtTest);
+//        long endTime2 = System.currentTimeMillis();
+//        System.out.println(endTime2 - startTime2);
 
     }
 
