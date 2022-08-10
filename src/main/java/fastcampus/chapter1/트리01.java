@@ -20,7 +20,7 @@ class NodeMgmt {
         if (this.head == null) {
             this.head = new Node(data);
         } else {
-            //Case2 : node 기 히니 이상 들어 있을때
+            //Case2 : node 기 히나 이상 들어 있을때
             Node findNode = this.head;
             while (true) {
                 // case 2-1 : 현재 Node 의 왼쪽에 Node 가 들어가야 할때
