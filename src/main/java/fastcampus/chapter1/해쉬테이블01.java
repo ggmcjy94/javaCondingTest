@@ -56,5 +56,10 @@ public class 해쉬테이블01 {
         myHash.saveData("DaveLee", "00000000000000");
         myHash.saveData("Hyun", "00000002");
         System.out.println(myHash.getData("Hyun"));
+        // 해쉬 의 문제점
+        myHash.saveData("David", "010100123123");
+        myHash.saveData("Dave", "010101020310230123");
+        System.out.println(myHash.getData("DaveLee")); //키의 충돌로인해 Dave 를 가져옴
+
     }
 }
