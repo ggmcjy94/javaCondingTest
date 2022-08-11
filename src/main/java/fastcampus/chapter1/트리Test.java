@@ -22,20 +22,20 @@ class NodeMgmtTest{
         if (this.head == null) {
             this.head = new Node(data);
         } else {
-            Node nodeFind = this.head;
+            Node findNode = this.head;
             while (true) {
-                if (data > nodeFind.value) {
-                    if (nodeFind.right != null) {
-                        nodeFind = nodeFind.right;
+                if (data < findNode.value) {
+                    if (findNode.left != null) {
+                        findNode = findNode.left;
                     } else {
-                        nodeFind.right = new Node(data);
+                        findNode.left = new Node(data);
                         break;
                     }
                 } else {
-                    if (nodeFind.left != null) {
-                        nodeFind = nodeFind.left;
+                    if (findNode.right != null) {
+                        findNode = findNode.right;
                     } else {
-                        nodeFind.left = new Node(data);
+                        findNode.right = new Node(data);
                         break;
                     }
                 }
@@ -44,24 +44,68 @@ class NodeMgmtTest{
         return true;
     }
 
-
     public Node search(int data) {
         if (this.head == null) {
             return null;
         } else {
-            Node nodeFind = this.head;
-            while (nodeFind != null) {
-                if (nodeFind.value == data) {
-                    return nodeFind;
-                } else if (data < nodeFind.value) {
-                    nodeFind = nodeFind.left;
+            Node findNode = this.head;
+            while (findNode != null) {
+                if (findNode.value == data) {
+                    return findNode;
+                } else if (data < findNode.value) {
+                    findNode = findNode.left;
                 } else {
-                    nodeFind = nodeFind.right;
+                    findNode = findNode.right;
                 }
             }
-            return  null;
+            return null;
         }
     }
+
+//    public boolean insertNode(int data) {
+//        if (this.head == null) {
+//            this.head = new Node(data);
+//        } else {
+//            Node nodeFind = this.head;
+//            while (true) {
+//                if (data > nodeFind.value) {
+//                    if (nodeFind.right != null) {
+//                        nodeFind = nodeFind.right;
+//                    } else {
+//                        nodeFind.right = new Node(data);
+//                        break;
+//                    }
+//                } else {
+//                    if (nodeFind.left != null) {
+//                        nodeFind = nodeFind.left;
+//                    } else {
+//                        nodeFind.left = new Node(data);
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//        return true;
+//    }
+//
+//
+//    public Node search(int data) {
+//        if (this.head == null) {
+//            return null;
+//        } else {
+//            Node nodeFind = this.head;
+//            while (nodeFind != null) {
+//                if (nodeFind.value == data) {
+//                    return nodeFind;
+//                } else if (data < nodeFind.value) {
+//                    nodeFind = nodeFind.left;
+//                } else {
+//                    nodeFind = nodeFind.right;
+//                }
+//            }
+//            return  null;
+//        }
+//    }
 }
 
 
