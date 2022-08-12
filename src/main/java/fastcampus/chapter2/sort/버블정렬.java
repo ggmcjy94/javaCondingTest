@@ -1,4 +1,4 @@
-package fastcampus.chapter2;
+package fastcampus.chapter2.sort;
 
 import java.util.ArrayList;
 import java.util.Collections;
