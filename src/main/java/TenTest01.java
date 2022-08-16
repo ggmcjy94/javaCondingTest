@@ -1,61 +1,67 @@
 import java.util.*;
 
-class Luggage implements Comparable<Luggage>{
-    String tName;
-    int weight, value;
-    public Luggage(String tName, int weight, int value) {
-        this.tName = tName;
+
+class Items {
+    String item;
+    Integer weight;
+    Integer value;
+
+    public Items(String item, Integer weight, Integer value) {
+        this.item = item;
         this.weight = weight;
         this.value = value;
-    }
-    @Override
-    public int compareTo(Luggage o) {
-        int c = Integer.compare(this.weight, o.weight);
-        if (c == 0) {
-            return Integer.compare(value, o.value);
-        }
-        return c;
     }
 }
 
 public class TenTest01 {
-    private String[][] solution(int w, int n, List<Luggage> items) {
-        int maxValue = Integer.MIN_VALUE;
-        Collections.sort(items);
-        int[][] back = new int[n+1][w+1];
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= w-1; j++) {
-                Luggage l = items.get(i - 1);
-                if (l.weight > j) {
-                    back[i][j] = back[i-1][j];
-                } else {
-                    back[i][j] = Math.max(back[i-1][j], l.value + back[i-1][j-l.weight]);
-                    System.out.println(back[i][j]);
-                }
-                maxValue = Math.max(maxValue, back[i][j]);
-
-            }
-        }
-        return new String[][] {
-                {String.valueOf(Integer.valueOf(w)), String.valueOf(Integer.valueOf(maxValue)), String.valueOf(Integer.valueOf(items.size()))},
-                {}
-        };
-    }
 
     public static void main(String[] args) {
-
         TenTest01 T = new TenTest01();
         Scanner sc = new Scanner(System.in);
-        List<Luggage> items = new ArrayList<>();
-        int w = sc.nextInt();
-        int n = sc.nextInt();
-        for (int i = 0; i < n; i++) {
-            String s = sc.next();
-            int weight = sc.nextInt();
-            int value = sc.nextInt();
-            items.add(new Luggage(s, weight, value));
+        int W = sc.nextInt();
+        int N = sc.nextInt();
+
+        ArrayList<Items> items = new ArrayList<>();
+        for (int i = 0; i < N; i++) {
+            String item = sc.next();
+            Integer weight = sc.nextInt();
+            Integer value = sc.nextInt();
+            items.add(new Items(item, weight, value));
         }
-        System.out.println(Arrays.deepToString(T.solution(w, n, items)));
+        String[][] solution = T.solution(items, W, N);
+        for (int i = 0; i < solution.length; i++) {
+            for (int j = 0; j < solution[i].length; j++) {
+                System.out.println(solution[i][j]);
+            }
+        }
+    }
+
+    private String[][] solution(ArrayList<Items> items, int w, int n) {
+        double totalValue = 0.0;
+        Integer totalCount = 0;
+        Integer weight = w;
+        ArrayList<String> tem = new ArrayList<>();
+
+        Collections.sort(items, (o1, o2) -> (o2.value/o2.weight) - (o1.value/o2.weight));
+
+        for (Items item : items) {
+            if ((weight - (double)item.weight) > 0) {
+                tem.add(item.item);
+                weight -= item.weight;
+                totalValue += item.value;
+                totalCount += 1;
+            }
+        }
+
+        String[] str = new String[tem.size()];
+        for (int i = 0; i < str.length; i++) {
+            str[i] = tem.get(i);
+        }
+
+        return new String[][]{
+                {String.valueOf(w), String.valueOf((int) totalValue), String.valueOf(totalCount)}
+                ,str
+        };
     }
 }
 
