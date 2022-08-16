@@ -28,6 +28,7 @@ public class TenTest01 {
             Integer value = sc.nextInt();
             items.add(new Items(item, weight, value));
         }
+
         String[][] solution = T.solution(items, W, N);
         for (int i = 0; i < solution.length; i++) {
             for (int j = 0; j < solution[i].length; j++) {
@@ -37,12 +38,13 @@ public class TenTest01 {
     }
 
     private String[][] solution(ArrayList<Items> items, int w, int n) {
+
         double totalValue = 0.0;
         Integer totalCount = 0;
-        Integer weight = w;
+        int weight = w;
         ArrayList<String> tem = new ArrayList<>();
 
-        Collections.sort(items, (o1, o2) -> (o2.value/o2.weight) - (o1.value/o2.weight));
+        items.sort((o1, o2) -> (o2.value / o2.weight) - (o1.value / o2.weight));
 
         for (Items item : items) {
             if ((weight - (double)item.weight) > 0) {
