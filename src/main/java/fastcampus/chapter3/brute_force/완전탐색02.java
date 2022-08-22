@@ -1,4 +1,4 @@
-package fastcampus.chapter3;
+package fastcampus.chapter3.brute_force;
 
 import java.io.*;
 import java.util.StringTokenizer;
