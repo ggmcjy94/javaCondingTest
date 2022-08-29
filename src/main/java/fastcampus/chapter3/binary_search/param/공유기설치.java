@@ -1,46 +1,50 @@
 package fastcampus.chapter3.binary_search.param;
 
 
+
 import java.io.*;
 import java.util.*;
 
-public class 나무자르기 {
+public class 공유기설치 {
 
     static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();
 
-    static int N, M;
+    static int N, C;
     static int[] A;
 
     static void input() {
         N = scan.nextInt();
-        M = scan.nextInt();
+        C = scan.nextInt();
         A = new int[N + 1];
         for (int i = 1; i <= N; i++) {
             A[i] = scan.nextInt();
         }
     }
 
-    static boolean determination(int H) {
-        // H 높이로 나무들을 잘랐을 때, M 만큼을 얻을 수 있으면 true, 없으면 false를 return하는 함수
-        long sum = 0;
-        for (int i = 1; i <= N; i++) {
-            if (A[i] > H) { // 5  0 0 2
-                sum += A[i] - H;
+    static boolean determination(int D) {
+        // D 만큼의 거리 차이를 둔다면 C 개 만큼의 공유기를 설치할 수 있는가?
+        // 제일 왼쪽 집부터 가능한 많이 설치해보자!
+        // D 만큼의 거리를 두면서 최대로 설치한 개수와 C 를 비교하자.
+        int cnt = 1, last = A[1];
+        for (int i = 2; i <= N; i++) {
+            if (A[i] - last >= D) {
+                cnt++;
+                last = A[i];
             }
         }
-        return sum >= M;
+        return cnt >= C;
     }
 
-    //4 7
-    //20 15 10 17
     static void pro() {
-        long L = 0, R = 2000000000, ans = 0;
+        // determination을 빠르게 하기 위해서 정렬해주자.
+        Arrays.sort(A , 1 , N + 1);
+        int L = 1, R = 1000000000, ans = 0;
         // [L ... R] 범위 안에 정답이 존재한다!
         // 이분 탐색과 determination 문제를 이용해서 answer를 빠르게 구하자!
-        while(L <= R) {
-            long mid = (L+R)/2;
-            if (determination((int) mid)) {
+        while (L <= R) {
+            int mid = (L+R)/2;
+            if (determination(mid)) {
                 ans = mid;
                 L = mid + 1;
             } else {
