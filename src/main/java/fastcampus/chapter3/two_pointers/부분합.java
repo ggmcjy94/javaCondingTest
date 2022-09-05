@@ -20,6 +20,7 @@ public class 부분합 {
             sum -= a[L - 1];
             while (R + 1 <= n && sum < S) {
                 sum += a[++R];
+
             }
             if (sum >= S) {
                 ans = Math.min(ans, R - L + 1);
