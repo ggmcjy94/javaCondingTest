@@ -1,4 +1,4 @@
-package fastcampus.chapter3.graph_search;
+package fastcampus.chapter3.graph_search.bfs;
 
 import java.util.LinkedList;
 import java.util.Queue;
