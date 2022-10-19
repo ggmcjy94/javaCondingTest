@@ -6,5 +6,5 @@ Java Conding Test Study
 인프런 
 패스트캠퍼스
 릿코드
-백준 - silver
+백준 
 강의
