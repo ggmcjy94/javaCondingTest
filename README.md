@@ -1,6 +1,4 @@
 # javaCondingTest
-Java Conding Test Study
-
 
 프로그래머스
 
