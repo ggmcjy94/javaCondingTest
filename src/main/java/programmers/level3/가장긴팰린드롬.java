@@ -5,6 +5,7 @@ public class 가장긴팰린드롬 {
     {
         //abacde
         int max = Integer.MIN_VALUE;
+
         for (int i = 0; i < s.length(); i++) {
             int start = i;
             int end = s.length() - 1;
