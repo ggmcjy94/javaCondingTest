@@ -10,8 +10,10 @@
 
 백준 
 
+solved ac
+
 정렬 
 
 이진트리탐색
 
-commit
+
